@@ -1,0 +1,3390 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/production.min.css">
+      
+    <link rel="shortcut icon" href="favicon.ico">
+ 
+</head>
+
+  <body>   
+
+    <div class="layout">
+      <!-- top-bar -->
+  <div class="modal" id="rawBodyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
+      <div>
+        <span aria-hidden="true">×</span>
+      </div>
+    </button>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid no-gutter" style="padding-top: 0px;">
+    <div class="row no-gutter">
+      <div class="col-xs-12 info no-gutter">
+          <div id="doc-body" class="">
+    <div class="row" id="intro" style="background-color: white">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 section">
+         <div class="api-information">
+            <div class="collection-name">
+              <p>Fleet Manager REST API</p>
+            </div>
+            <div class="collection-description"></div>
+          </div>
+      </div>  
+      
+    </div>  
+        <div class="row row-no-padding row-eq-height" id="customer_register" style="background-color: white">
+
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        CUSTOMER REGISTRAION
+      </div>
+    </div>
+    <div class="url">/api/user-registration</div>
+    <div class="description"><p>New Custoemer's registration api</p>
+    </div>
+
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY </div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_name</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">mobno</div>
+                <div class="value col-md-9 col-xs-12">NUMERIC</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED, UNIQUE</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">emailid</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED, UNIQUE</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">password</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">gender</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>MALE = 1, FEMALE = 0</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">is_smconnected</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>CONNECTED THROUGH FACEBOOK/GOOGLE+ = 1 , NORMAL REGISTRATION = 0</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">socialmedia_uid</div>
+                <div class="value col-md-9 col-xs-12"></div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED IF  IS_SMCONNECTED=1</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">profile_pic</div>
+                <div class="value col-md-9 col-xs-12">FILE UPLOAD</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">mode</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>MODE : 1=ANDROID,  2=IOS</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">device_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+
+      </div>
+
+ 
+      <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">success</div>
+                <div class="value col-md-6 col-xs-12">INT</div>
+                  <div class="description col-md-6 col-xs-12"><p>1 = TRUE, 0 = FALSE</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">message</div>
+                <div class="value col-md-6 col-xs-12">STRING</div>
+                <div class="description col-md-6 col-xs-12"><p class="text-uppercase">You have Registered Successfully!</p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.user_id</div>
+                <div class="value col-md-6 col-xs-12">INT</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.api_token</div>
+                <div class="value col-md-6 col-xs-12">STRING</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.fcm_id</div>
+                <div class="value col-md-6 col-xs-12">STRING</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.device_token</div>
+                <div class="value col-md-6 col-xs-12">STRING</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.socialmedia_uid</div>
+                <div class="value col-md-6 col-xs-12">STRING</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.user_name</div>
+                <div class="value col-md-6 col-xs-12">STRING</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.mobno</div>
+                <div class="value col-md-6 col-xs-12">NUMERIC</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.phone_code</div>
+                <div class="value col-md-6 col-xs-12">INT</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.emailid</div>
+                <div class="value col-md-6 col-xs-12">STRING</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.gender</div>
+                <div class="value col-md-6 col-xs-12">INT</div>
+                <div class="description col-md-6 col-xs-12"><p>0 = FEMALE, 1 = MALE</p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.password</div>
+                <div class="value col-md-6 col-xs-12">STRING</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.profile_pic</div>
+                <div class="value col-md-6 col-xs-12">URL</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.status</div>
+                <div class="value col-md-6 col-xs-12">INT</div>
+                <div class="description col-md-6 col-xs-12"><p>1 = LOGGED IN, 0 = LOGGED OUT</p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-6 col-xs-12">data.userinfo.timestamp</div>
+                <div class="value col-md-6 col-xs-12">DATETIME</div>
+                <div class="description col-md-6 col-xs-12"><p></p></div>
+              </div>
+
+
+    </div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="login_without_social_media" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Login without social media
+      </div>
+    </div>
+    <div class="url">/api/user-login</div>
+    <div class="description"><p>user's login without social media connect</p>
+    </div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">username</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>USERNAME MUST BE REGISTERED EMAIL-ID</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">password</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">is_smconnected</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>CONNECTED = 1, NORMAL = 0</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">device_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+
+      </div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">success</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">message</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase">You have Signed in Successfully!</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.user_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.api_token</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.fcm_id</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.device_token</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.socialmedia_uid</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.user_name</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.user_type</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p>C = CUSTOMER, D = DRIVER</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.mobno</div>
+          <div class="value col-md-6 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.phone_code</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.emailid</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.gender</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>0 = FEMALE, 1 = MALE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.password</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.profile_pic</div>
+          <div class="value col-md-6 col-xs-12">URL</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.status</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = LOGGED IN, 0 = LOGGED OUT</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.timestamp</div>
+          <div class="value col-md-6 col-xs-12">DATETIME</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+
+    </div>
+  </div>
+  <br><br>
+</div>
+
+</div>
+
+<div class="row row-no-padding row-eq-height" id="forgot_password" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Forgot password
+      </div>
+    </div>
+    <div class="url">/api/forgot-password</div>
+    <div class="description"><p>Forget password api to reset existing user's password</p>
+    </div>
+
+
+
+
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+          <hr>
+            <div class="param row">
+              <div class="name col-md-3 col-xs-12">email</div>
+              <div class="value col-md-9 col-xs-12">STRING</div>
+              <div class="description col-md-9 col-xs-12"><p>REQUIRED, EMAIL-ID MUST BE REGISTERED </p>
+              </div>
+            </div>
+      </div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">success</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">message</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase">Please, check your Emails for Login Credentials.</p></div>
+        </div>
+    </div>
+  </div>
+  <br><br>
+</div>
+
+</div>
+
+<div class="row row-no-padding row-eq-height" id="edit_user_profile" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Edit User Profile
+      </div>
+    </div>
+    <div class="url">/api/edit-user-profile</div>
+    <div class="description"><p>edit user/customer/driver's profile api</p>
+</div>
+
+
+
+
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>HIDDEN, REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_name</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">mobno</div>
+                <div class="value col-md-9 col-xs-12">NUMERIC</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED (MUST NOT BE NULL)</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">emailid</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED (MUST NOT BE NULL)</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">profile_pic</div>
+                <div class="value col-md-9 col-xs-12">FILE UPLOAD</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">gender</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">edit</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+            <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">success</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">message</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase">Profile has been Updated Successfully!</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.user_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.user_type</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p>C = CUSTOMER, D = DRIVER</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.user_name</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.mobno</div>
+          <div class="value col-md-6 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.phone_code</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.emailid</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.gender</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>0 = FEMALE, 1 = MALE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.profile_pic</div>
+          <div class="value col-md-6 col-xs-12">URL</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.status</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = LOGGED IN, 0 = LOGGED OUT</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.timestamp</div>
+          <div class="value col-md-6 col-xs-12">DATETIME</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+
+    </div>
+
+  </div>
+  <br><br>
+</div>
+</div>
+
+   <div class="row row-no-padding row-eq-height" id="user_login_with_social_media" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        User login with social media
+      </div>
+    </div>
+    <div class="url">/api/user-login-sm</div>
+    <div class="description"><p>Customer login/register using social media.</p>
+</div>
+
+
+
+
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY </div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">socialmedia_uid</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_name</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">mobno</div>
+                <div class="value col-md-9 col-xs-12">NUMERIC</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED, UNIQUE</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">emailid</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED, UNIQUE</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">gender</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">profile_pic</div>
+                <div class="value col-md-9 col-xs-12">STRING (URL)</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">is_smconnected</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>VALUE MUST BE 1</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">device_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+
+      </div>
+            <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">success</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">message</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase">You have Signed in Successfully!</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.user_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.user_type</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p>C = CUSTOMER, D = DRIVER</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.fcm_id</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.api_token</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.device_token</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.socialmedia_uid</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.user_name</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.mobno</div>
+          <div class="value col-md-6 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.phone_code</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.emailid</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.gender</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>0 = FEMALE, 1 = MALE</p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.password</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.profile_pic</div>
+          <div class="value col-md-6 col-xs-12">URL</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.status</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = LOGGED IN, 0 = LOGGED OUT</p></div>
+        </div>  
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.userinfo.timestamp</div>
+          <div class="value col-md-6 col-xs-12">DATETIME</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>  
+
+    </div>
+  </div>
+  <br><br>
+</div>
+
+</div>
+
+<div class="row row-no-padding row-eq-height" id="message_us" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Message Us
+      </div>
+    </div>
+    <div class="url">/api/message-us</div>
+    <div class="description"><p>Customers messages or feedback api.</p>
+</div>
+
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">message</div>
+                <div class="value col-md-9 col-xs-12">TEXT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+            <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+            <div class="param row">
+          <div class="name col-md-3 col-xs-12">success</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">message</div>
+          <div class="value col-md-9 col-xs-12">STRING</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase">Thank you ! We will get back to you Soon...</p></div>
+        </div>
+
+    </div>
+  </div>
+  <br><br>
+</div>
+
+</div>
+
+<div class="row row-no-padding row-eq-height" id="share_review" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Share Review
+      </div>
+    </div>
+    <div class="url">/api/review</div>
+    <div class="description">
+      <p>Driver review api.</p>
+    </div>
+
+
+
+
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">ratings</div>
+                <div class="value col-md-9 col-xs-12">NUMERIC</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED|NUMERIC|MIN:1|MAX:5</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">review_text</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+                  <div class="request-body col-md-4">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">success</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">message</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">Thank you. Your Review helps us Improve our Services.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.user_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.ratings</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.review_text</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+
+    </div>
+  </div>
+
+  </div>
+  <br><br>
+</div>
+
+</div>
+
+<div class="row row-no-padding row-eq-height" id="change_password" style="background-color: white">
+  <div class="col-md-13 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Change Password
+      </div>
+    </div>
+    <div class="url">/api/change-password</div>
+    <div class="description"><p>Change Password api to update new password</p>
+</div>
+
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">new_password</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+            <div class="param row">
+          <div class="name col-md-3 col-xs-12">success</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">message</div>
+          <div class="value col-md-9 col-xs-12">STRING</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase">Your Password has been Updated Successfully.</p></div>
+        </div>
+
+
+    </div>
+
+  </div>
+  <br><br>
+</div>
+
+</div>
+
+<div class="row row-no-padding row-eq-height" id="book_now" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Book Now
+      </div>
+    </div>
+    <div class="url">/api/book-now</div>
+    <div class="description"><p>book now api to book ride on current time</p>
+</div>
+
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">source_address</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">dest_address</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">source_lat</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">source_long</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">dest_lat</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">dest_long</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_type</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>0= BOOK NOW, 1=BOOK LATER</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+            <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+        <div class="param row">
+          <div class="name col-md-4 col-xs-12">success</div>
+          <div class="value col-md-8 col-xs-12">INT</div>
+          <div class="description col-md-8 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-4 col-xs-12">message</div>
+          <div class="value col-md-8 col-xs-12">STRING</div>
+          <div class="description col-md-8 col-xs-12"><p class="text-uppercase">Your Request has been Submitted Successfully.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-4 col-xs-12">data.booking_id</div>
+          <div class="value col-md-8 col-xs-12">INT</div>
+          <div class="description col-md-8 col-xs-12"><p></p></div>
+        </div>
+            
+
+    </div>
+
+  </div>
+  <br><br>
+</div>
+
+</div>
+
+<div class="row row-no-padding row-eq-height" id="book_later" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Book Later
+      </div>
+    </div>
+    <div class="url">/api/book-later</div>
+    <div class="description"><p>book ride later api</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">source_address</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">dest_address</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">source_lat</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">source_long</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">dest_lat</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">dest_long</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_type</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>1=BOOK LATER, 0=BOOK NOW</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">journey_date</div>
+                <div class="value col-md-9 col-xs-12">STRING </div>
+                <div class="description col-md-9 col-xs-12"><p>YYYY-MM-DD</p></div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">journey_time</div>
+                <div class="value col-md-9 col-xs-12">STRING </div>
+                <div class="description col-md-9 col-xs-12"><p>00:00:00</p></div>
+              </div>
+
+      </div>
+            <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+            <div class="param row">
+          <div class="name col-md-4 col-xs-12">success</div>
+          <div class="value col-md-8 col-xs-12">INT</div>
+          <div class="description col-md-8 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-4 col-xs-12">message</div>
+          <div class="value col-md-8 col-xs-12">STRING</div>
+          <div class="description col-md-8 col-xs-12"><p class="text-uppercase">Your Request has been Submitted Successfully.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-4 col-xs-12">data.booking_id</div>
+          <div class="value col-md-8 col-xs-12">INT</div>
+          <div class="description col-md-8 col-xs-12"><p></p></div>
+        </div>
+    </div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="update_destination" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Update Destination
+      </div>
+    </div>
+    <div class="url">/api/update-destination</div>
+    <div class="description"><p>update destination address api</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">dest_address</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">dest_lat</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">dest_long</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+            <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+
+            <div class="param row">
+          <div class="name col-md-8 col-xs-12">success</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">message</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">Your Destination has  been Updated Successfully.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.user_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.dest_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.dest_lat</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.dest_long</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+           
+    </div>
+  </div>
+  <br><br>
+</div>
+
+</div>
+
+<div class="row row-no-padding row-eq-height" id="ride_history" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Ride History
+      </div>
+    </div>
+    <div class="url">/api/ride-history</div>
+    <div class="description"><p>Ride history of particular customer</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">customer_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+            <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+            <hr>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">success</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">message</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">Data Received.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.user_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.book_date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.book_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.source_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.source_time</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.dest_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.dest_time</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.driving_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.total_kms</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.amount</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rides.ride_status</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p>COMPLETED/ UPCOMING/ CANCELLED</p></div>
+        </div>
+ 
+
+    </div>
+  </div>
+  <br><br>
+</div>
+
+
+</div>
+
+<div class="row row-no-padding row-eq-height" id="change_driver_availability" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Change Driver Availability
+      </div>
+    </div>
+    <div class="url">/api/change-availability</div>
+    <div class="description"><p>Change driver's availability status : online/offline</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">availability</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>0 = OFFLINE, 1= ONLINE</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+       <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+     <div class="param row">
+          <div class="name col-md-3 col-xs-12">success</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">message</div>
+          <div class="value col-md-9 col-xs-12">STRING</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase">You are now Online/OFFLINE</p></div>
+        </div>
+    
+</div>
+
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="user_logout" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        User Logout
+      </div>
+    </div>
+    <div class="url">/api/user-logout</div>
+    <div class="description"><p>User's logout api</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+       <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+      <div class="param row">
+          <div class="name col-md-3 col-xs-12">success</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">message</div>
+          <div class="value col-md-9 col-xs-12">STRING</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase">You have Logged out Successfully.</p></div>
+        </div>
+    
+</div>
+
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="ride_requests" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Ride Requests
+      </div>
+    </div>
+    <div class="url">/api/ride-requests</div>
+    <div class="description"><p>list of not accepted rides</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+       <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-6 col-xs-12">success</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">message</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase">Data Received.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_requests.booking_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_requests.book_date</div>
+          <div class="value col-md-6 col-xs-12">DATE</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_requests.book_time</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_requests.source_address</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_requests.dest_address</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_requests.journey_date</div>
+          <div class="value col-md-6 col-xs-12">DATE</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_requests.journey_time</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+    
+</div>
+
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="driver_single_ride_request" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Driver's Single-ride-request
+      </div>
+    </div>
+    <div class="url">/api/single-ride-request</div>
+    <div class="description"><p>Driver's single ride's detail</p>
+</div>
+
+
+
+
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+       <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-6 col-xs-12">success</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">message</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase">Data Received.</p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.riderequest_info.booking_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.riderequest_info.source_address</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.riderequest_info.dest_address</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.riderequest_info.book_date</div>
+          <div class="value col-md-6 col-xs-12">DATE</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.riderequest_info.book_time</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.riderequest_info.journey_date</div>
+          <div class="value col-md-6 col-xs-12">DATE</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.riderequest_info.journey_time</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.riderequest_info.accept_status</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase">1 = ACCEPTED, 0 = NOT ACCEPTED</p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.riderequest_info.approx_timetoreach</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.user_details.user_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.user_details.user_name</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.user_details.mobno</div>
+          <div class="value col-md-6 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.user_details.profile_pic</div>
+          <div class="value col-md-6 col-xs-12">URL</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+
+</div>
+
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="user_single_ride_request" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        User's single-ride-request
+      </div>
+    </div>
+    <div class="url">/api/user-single-ride</div>
+    <div class="description"><p>Customer's single ride info</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+ <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-6 col-xs-12">success</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">message</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase">Data Received.</p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.user_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.booking_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.source_address</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.dest_address</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.source_time</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.dest_time</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+    
+    <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.book_date</div>
+          <div class="value col-md-6 col-xs-12">DATE</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.book_time</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.driving_time</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.total_kms</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.amount</div>
+          <div class="value col-md-6 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.rideinfo.ride_status</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase">COMPLETED/ UPCOMING/ CANCELLED</p></div>
+        </div>
+
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.driver_details.driver_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.driver_details.driver_name</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.driver_details.profile_pic</div>
+          <div class="value col-md-6 col-xs-12">URL</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.driver_details.ratings</div>
+          <div class="value col-md-6 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_review.profile_pic</div>
+          <div class="value col-md-6 col-xs-12">URL</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_review.user_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_review.booking_id</div>
+          <div class="value col-md-6 col-xs-12">INT</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_review.review_text</div>
+          <div class="value col-md-6 col-xs-12">STRING</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.ride_review.date</div>
+          <div class="value col-md-6 col-xs-12">DATE</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        
+    <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.fare_breakdown.base_fare</div>
+          <div class="value col-md-6 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.fare_breakdown.ride_amount</div>
+          <div class="value col-md-6 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-6 col-xs-12">data.fare_breakdown.extra_charges</div>
+          <div class="value col-md-6 col-xs-12">NUMERIC</div>
+          <div class="description col-md-6 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="cancel_ride_request" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Cancel Ride Request
+      </div>
+    </div>
+    <div class="url">/api/cancel-ride-request</div>
+    <div class="description"><p>driver can cancle ride using this api</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">reason</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+    <div class="request-body col-md-6">
+        <div class="body-heading">RESPONSE BODY </div>
+        <hr>
+         <div class="param row">
+          <div class="name col-md-3 col-xs-12">success</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">message</div>
+          <div class="value col-md-9 col-xs-12">STRING</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase">Your Ride has been Cancelled Successfully.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">data.booking_id</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+       
+    </div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="reject_ride_request" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Reject Ride Request
+      </div>
+    </div>
+    <div class="url">/api/reject-ride-request</div>
+    <div class="description"><p>Driver reject ride</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+<div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+     <div class="param row">
+          <div class="name col-md-3 col-xs-12">success</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">message</div>
+          <div class="value col-md-9 col-xs-12">STRING</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase">You have Rejected a Ride Request.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">data.booking_id</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+    
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="driver_reviews" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Driver Reviews
+      </div>
+    </div>
+    <div class="url">/api/get-reviews</div>
+    <div class="description"><p>driver's review</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">driver_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+      <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-8 col-xs-12">success</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">message</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">Data Received.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.driver_reviews.user_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.driver_reviews.user_name</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.driver_reviews.profile_pic</div>
+          <div class="value col-md-4 col-xs-12">URL</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.driver_reviews.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.driver_reviews.ratings</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.driver_reviews.review_text</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.driver_reviews.date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+    
+</div>
+
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="start_ride" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Start Ride
+      </div>
+    </div>
+    <div class="url">/api/start-ride</div>
+    <div class="description"><p>Start ride api </p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">start_address</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">start_lat</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">start_long</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+      <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+     <div class="param row">
+          <div class="name col-md-3 col-xs-12">success</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">message</div>
+          <div class="value col-md-9 col-xs-12">STRING</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase">Ride Started</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-3 col-xs-12">data.booking_id</div>
+          <div class="value col-md-9 col-xs-12">INT</div>
+          <div class="description col-md-9 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+    
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="destination_reached" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Destination Reached
+      </div>
+    </div>
+    <div class="url">/api/destination-reached</div>
+    <div class="description"><p>Destination reach api, call when ride completed</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">fcm_id</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">user_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">end_address</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">end_lat</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">end_long</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">ride_time</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">driving_time</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">total_kms</div>
+                <div class="value col-md-9 col-xs-12">NUMERIC</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+<div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-8 col-xs-12">success</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">message</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">Ride Completed</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.source_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.dest_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.source_timestamp</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.dest_timestamp</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.book_timestamp</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.ridestart_timestamp</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.driving_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.total_kms</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.amount</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.ride_status</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">COMPLETED/ UPCOMING/ CANCELLED</p></div>
+        </div>
+        
+         <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.user_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.user_name</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.profile_pic</div>
+          <div class="value col-md-4 col-xs-12">URL</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.ride_review.user_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.ride_review.ratings</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.ride_review.review_text</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.ride_review.date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.fare_breakdown.base_fare</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.fare_breakdown.ride_amount</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.fare_breakdown.extra_charges</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="confirm_payment" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Confirm Payment
+      </div>
+    </div>
+    <div class="url">/api/confirm-payment</div>
+    <div class="description"><p>Payment confirmation api</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+<div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-4 col-xs-12">success</div>
+          <div class="value col-md-8 col-xs-12">INT</div>
+          <div class="description col-md-8 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-4 col-xs-12">message</div>
+          <div class="value col-md-8 col-xs-12">STRING</div>
+          <div class="description col-md-8 col-xs-12"><p class="text-uppercase">Payment Received.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-4 col-xs-12">data.booking_id</div>
+          <div class="value col-md-8 col-xs-12">INT</div>
+          <div class="description col-md-8 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-4 col-xs-12">data.payment_status</div>
+          <div class="value col-md-8 col-xs-12">INT</div>
+          <div class="description col-md-8 col-xs-12"><p class="text-uppercase">1 = PAYMENT COMPLETED, 0 = PAYMENT INCOMPLETE</p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-4 col-xs-12">data.payment_mode</div>
+          <div class="value col-md-8 col-xs-12">STRING</div>
+          <div class="description col-md-8 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+    
+    
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="accept_ride_request" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Accept Ride Request
+      </div>
+    </div>
+    <div class="url">/api/accept-ride-request</div>
+    <div class="description"><p>Accept ride by driver</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-4 col-xs-12">approx_timetoreach</div>
+                <div class="value col-md-8 col-xs-12">NUMERIC</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-4 col-xs-12">booking_id</div>
+                <div class="value col-md-8 col-xs-12">INT</div>
+                  <div class="description col-md-8 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-4 col-xs-12">user_id</div>
+                <div class="value col-md-8 col-xs-12">INT</div>
+                  <div class="description col-md-8 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-4 col-xs-12">fcm_id</div>
+                <div class="value col-md-8 col-xs-12">STRING</div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-4 col-xs-12">api_token</div>
+                <div class="value col-md-8 col-xs-12">STRING</div>
+                  <div class="description col-md-8 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+      <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">success</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">message</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">You have Accepted the Ride  Request. Pick up the Customer on Time !</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.riderequest_info.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.riderequest_info.source_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.riderequest_info.dest_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.riderequest_info.book_date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.riderequest_info.book_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.riderequest_info.journey_date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.riderequest_info.journey_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.riderequest_info.accept_status</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">1 = ACCEPTED, 0 = NOT ACCEPTED</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.riderequest_info.approx_timetoreach</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.user_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.user_name</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.mobno</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.profile_pic</div>
+          <div class="value col-md-4 col-xs-12">URL</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+   
+       
+</div>
+
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="driver_rides" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Driver Rides
+      </div>
+    </div>
+    <div class="url">/api/driver-rides</div>
+    <div class="description"><p>list of rides by particular driver</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">driver_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+      <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-8 col-xs-12">success</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">message</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">Data Received.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.upcoming_rides.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.upcoming_rides.book_date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.upcoming_rides.book_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.upcoming_rides.source_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.upcoming_rides.dest_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.upcoming_rides.journey_date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.upcoming_rides.journey_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+         <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.upcoming_rides.ride_status</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+    
+
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.book_date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.book_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.source_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.source_time</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.dest_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.dest_time</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.driving_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.total_kms</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.amount</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.journey_date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.journey_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.completed_rides.ride_status</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.cancelled_rides.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.cancelled_rides.book_date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.cancelled_rides.book_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.cancelled_rides.source_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.cancelled_rides.dest_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.cancelled_rides.journey_date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.cancelled_rides.journey_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.cancelled_rides.ride_status</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        
+        
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="single_ride_info" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Single Ride Info
+      </div>
+    </div>
+    <div class="url">/api/single-ride-info</div>
+    <div class="description"><p>single ride detail of particular booking</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">booking_id</div>
+                <div class="value col-md-9 col-xs-12">INT</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+<div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-8 col-xs-12">success</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">message</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">Data Received.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.booking_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.source_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.dest_address</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.source_timestamp</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.dest_timestamp</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.book_timestamp</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.ridestart_timestamp</div>
+          <div class="value col-md-4 col-xs-12">DATETIME</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.driving_time</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.total_kms</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.amount</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.rideinfo.ride_status</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.user_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.user_name</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.mobno</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.user_details.profile_pic</div>
+          <div class="value col-md-4 col-xs-12">URL</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.ride_review.user_id</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.ride_review.ratings</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.ride_review.review_text</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.ride_review.date</div>
+          <div class="value col-md-4 col-xs-12">DATE</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.fare_breakdown.base_fare</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.fare_breakdown.ride_amount</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.fare_breakdown.extra_charges</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.fare_breakdown.payment_mode</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="active_drivers" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Active Drivers
+      </div>
+    </div>
+    <div class="url">/api/active-drivers</div>
+    <div class="description"><p>List of online drivers</p>
+</div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+      <div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-4 col-xs-12">success</div>
+          <div class="value col-md-8 col-xs-12">INT</div>
+          <div class="description col-md-8 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-4 col-xs-12">message</div>
+          <div class="value col-md-8 col-xs-12">STRING</div>
+          <div class="description col-md-8 col-xs-12"><p class="text-uppercase">Data Received.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-4 col-xs-12">data.driver_details</div>
+          <div class="value col-md-8 col-xs-12">INT</div>
+          <div class="description col-md-8 col-xs-12"><p class="text-uppercase">ARRAY OF DRIVER_ID</p></div>
+        </div>
+    
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="get_settings" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">POST</span>
+        Get Settings
+      </div>
+    </div>
+    <div class="url">/api/get-settings</div>
+    <div class="description"><p>list of fare-breakdowns</p>
+    </div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              <div class="param row">
+                <div class="name col-md-3 col-xs-12">api_token</div>
+                <div class="value col-md-9 col-xs-12">STRING</div>
+                  <div class="description col-md-9 col-xs-12"><p>REQUIRED</p>
+                  </div>
+              </div>
+
+      </div>
+<div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+    <div class="param row">
+          <div class="name col-md-8 col-xs-12">success</div>
+          <div class="value col-md-4 col-xs-12">INT</div>
+          <div class="description col-md-4 col-xs-12"><p>1 = TRUE, 0 = FALSE</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">message</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">Data Received.</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.base_fare</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.base_km</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.std_fare</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.base_waiting_time</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.weekend_base_fare</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.weekend_base_km</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.weekend_wait_time</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.weekend_std_fare</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.night_base_fare</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.night_base_km</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.night_wait_time</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.night_std_fare</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.reasons</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">ARRAY OF REASONS</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.distance_format</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"> KM/ MILES</p></div>
+        </div>
+
+                <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.max_trip_time</div>
+          <div class="value col-md-4 col-xs-12">NUMERIC</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"> 1</p></div>
+        </div>
+
+                <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.currency_symbol</div>
+          <div class="value col-md-4 col-xs-12">STRING</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase"> ₹</p></div>
+        </div>
+        <div class="param row">
+          <div class="name col-md-8 col-xs-12">data.vehicle_types</div>
+          <div class="value col-md-4 col-xs-12">Array</div>
+          <div class="description col-md-4 col-xs-12"><p class="text-uppercase">["id",<br> "vehicletype", <br>"displayname", <br>"icon", <br>"no_seats", <br>"base_fare",<br>"base_km", <br>"std_fare",<br>"base_waiting_time",<br>"weekend_base_fare",<br>"weekend_base_km",<br>"weekend_wait_time",<br>"weekend_std_fare",<br>"night_base_fare",<br>"night_base_km",<br>"night_wait_time",<br>"night_std_fare"]</p></div>
+        </div>
+       
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+
+<div class="row row-no-padding row-eq-height" id="get_codes" style="background-color: white">
+  <div class="col-md-12 col-xs-12 section">
+  <div class="api-information">
+    <div class="heading">
+      <div class="name">
+        <span class="POST method">GET</span>
+        Get Codes
+      </div>
+    </div>
+    <div class="url">/api/codes</div>
+    <div class="description"><p>list of phone codes</p>
+    </div>
+      <div class="request-body col-md-6">
+        <div class="body-heading">REQUEST BODY</div>
+            <hr>
+              
+
+      </div>
+<div class="request-body col-md-6">
+    <div class="body-heading">RESPONSE BODY </div>
+    <hr>
+
+    <div class="param row">
+      <div class="name col-md-8 col-xs-12">Array</div>
+      <div class="value col-md-4 col-xs-12">["name", "dial_code", "code"]</div>
+      <div class="description col-md-4 col-xs-12"><p class="text-uppercase"></p></div>
+    </div>      
+
+</div>
+  </div>
+  <br><br>
+</div>
+</div>
+  </div>  <!--end doc-body -->
+      </div> <!-- end info no-gutter-->
+
+      <div class="no-gutter index sidebar" style="padding-top: 0px;">
+        <div class="collection-heading">
+          <p class="heading">fleet-manager</p>
+        </div>
+        <ul class="nav navbar-nav" id="navbar-example">
+          <li class="request intro">
+            <a class="nav-link dropdown-item" href="#intro">
+              <div class="request-name">Introduction</div>
+            </a>
+          </li>
+          <li class="toc">
+            <ul></ul>
+          </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="user registration">
+                  <a class="nav-link dropdown-item" href="#customer_register">
+                    <span>Customer registration</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="login without social media">
+                  <a class="nav-link dropdown-item" href="#login_without_social_media">
+                    <span>Login without social media</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="forgot password">
+                  <a class="nav-link dropdown-item" href="#forgot_password">
+                    <span>Forgot password</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Edit user profile">
+                  <a class="nav-link dropdown-item" href="#edit_user_profile">
+                    <span>Edit user profile</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="user login with social media">
+                  <a class="nav-link dropdown-item" href="#user_login_with_social_media">
+                    <span>User login with social media</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Message Us">
+                  <a class="nav-link dropdown-item" href="#message_us">
+                    <span>Message Us</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="share review">
+                  <a class="nav-link dropdown-item" href="#share_review">
+                    <span>Share Review</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Change Password">
+                  <a class="nav-link dropdown-item" href="#change_password">
+                    <span>Change Password</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Book Now">
+                  <a class="nav-link dropdown-item" href="#book_now">
+                    <span>Book Now</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Book Later">
+                  <a class="nav-link dropdown-item" href="#book_later">
+                    <span>Book Later</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Update Destination">
+                  <a class="nav-link dropdown-item" href="#update_destination">
+                    <span>Update Destination</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Ride History">
+                  <a class="nav-link dropdown-item" href="#ride_history">
+                    <span>Ride History</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Change Driver Availability">
+                  <a class="nav-link dropdown-item" href="#change_driver_availability">
+                    <span>Change Driver Availability</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="User Logout">
+                  <a class="nav-link dropdown-item" href="#user_logout">
+                    <span>User Logout</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Ride Requests">
+                  <a class="nav-link dropdown-item" href="#ride_requests">
+                    <span>Ride Requests</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Driver's Single-ride-request">
+                  <a class="nav-link dropdown-item" href="#driver_single_ride_request">
+                    <span>Driver's Single-ride-request</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="User's single-ride-request">
+                  <a class="nav-link dropdown-item" href="#user_single_ride_request">
+                    <span>User's single-ride-request </span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Cancel Ride Request">
+                  <a class="nav-link dropdown-item" href="#cancel_ride_request">
+                    <span>Cancel Ride Request</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Reject Ride Request">
+                  <a class="nav-link dropdown-item" href="#reject_ride_request">
+                    <span>Reject Ride Request</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Driver Reviews">
+                  <a class="nav-link dropdown-item" href="#driver_reviews">
+                    <span>Driver Reviews</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Start Ride">
+                  <a class="nav-link dropdown-item" href="#start_ride">
+                    <span>Start Ride</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Destination Reached">
+                  <a class="nav-link dropdown-item" href="#destination_reached">
+                    <span>Destination Reached</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Confirm Payment">
+                  <a class="nav-link dropdown-item" href="#confirm_payment">
+                    <span>Confirm Payment</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Accept Ride Request">
+                  <a class="nav-link dropdown-item" href="#accept_ride_request">
+                    <span>Accept Ride Request</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Driver Rides">
+                  <a class="nav-link dropdown-item" href="#driver_rides">
+                    <span>Driver Rides</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Single Ride Info">
+                  <a class="nav-link dropdown-item" href="#single_ride_info">
+                    <span>Single Ride Info</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Active Drivers">
+                  <a class="nav-link dropdown-item" href="#active_drivers">
+                    <span>Active Drivers</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>POST</span>
+                </div>
+                <div class="request-name" title="Get Settings">
+                  <a class="nav-link dropdown-item" href="#get_settings">
+                    <span>Get Settings</span>
+                  </a>
+                </div>
+              </li>
+              <li class="request">
+                <div class="POST method">
+                  <span>GET</span>
+                </div>
+                <div class="request-name" title="Get Codes">
+                  <a class="nav-link dropdown-item" href="#get_codes">
+                    <span>Get Codes</span>
+                  </a>
+                </div>
+              </li>
+        </ul>
+      </div>
+    </div>    
+  </div>  
+
+ 
+
+
+    </div>  
+
+  </body>
+ </html>   
